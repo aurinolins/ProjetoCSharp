@@ -1,0 +1,17 @@
+﻿using Microsoft.EntityFrameworkCore;
+using app02.Models.Entidades;
+
+namespace app02.Data
+{
+    public class app02Context : DbContext
+    {
+        public app02Context (DbContextOptions<app02Context> options)
+            : base(options)
+        {
+        }
+
+        public DbSet<Cliente> Cliente { get; set; }
+
+        public DbSet<app02.Models.Entidades.Titulo> Titulos { get; set; }
+    }
+}
