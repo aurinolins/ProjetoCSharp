@@ -21,8 +21,10 @@ namespace app02.Controllers
 
         // GET: Titulos
         public async Task<IActionResult> Index()
+        
         {
             var app02Context = _context.Titulos.Include(t => t.Cliente);
+
             return View(await app02Context.ToListAsync());
         }
 
@@ -57,7 +59,7 @@ namespace app02.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Numero,Valor,Emissao,Vencimento,ClienteId,Status")] Titulo titulo)
+        public async Task<IActionResult> Create([Bind("Id,Documento,Valor,Emissao,Vencimento,ClienteId,Status")] Titulo titulo)
         {
             if (!ModelState.IsValid)
             {
@@ -93,7 +95,7 @@ namespace app02.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Numero,Valor,Emissao,Vencimento,ClienteId,Status")] Titulo titulo)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Documento,Valor,Emissao,Vencimento,ClienteId,Status")] Titulo titulo)
         {
             if (id != titulo.Id)
             {
@@ -158,5 +160,31 @@ namespace app02.Controllers
         {
             return _context.Titulos.Any(e => e.Id == id);
         }
+
+        // Busca com filtro de Datas de Vencimento
+        public async Task<IActionResult> FindbyDate(DateTime? dataini,DateTime? datafim, Cliente cliente)
+
+        {
+            if (!dataini.HasValue)
+            {
+                dataini = new DateTime(DateTime.Now.Year, 01, 01);
+            }
+
+            if (!datafim.HasValue)
+            {
+                dataini = new DateTime(DateTime.Now.Year, 12, 31);
+            }
+
+
+            var listadetitulos = _context.Titulos.Include(t => t.Cliente);
+            var selecao = listadetitulos.Where(x => x.Vencimento >= dataini & x.Vencimento <= datafim);
+
+            ViewData["dataini"] = dataini.Value.ToString("ddMMyyyy");
+            ViewData["datafim"] = datafim.Value.ToString("ddMMyyyy");
+
+
+            return View(await selecao.ToListAsync());
+        }
+
     }
 }

@@ -22,9 +22,11 @@ namespace app02.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<string>("Email");
+
                     b.Property<string>("Nome");
 
-                    b.Property<string>("email");
+                    b.Property<int>("Telefone");
 
                     b.HasKey("Id");
 
@@ -38,13 +40,21 @@ namespace app02.Migrations
 
                     b.Property<int>("ClienteId");
 
+                    b.Property<int>("Documento");
+
                     b.Property<DateTime>("Emissao");
 
-                    b.Property<int>("Numero");
+                    b.Property<double>("Juros");
+
+                    b.Property<double>("Multa");
+
+                    b.Property<DateTime>("Pagamento");
 
                     b.Property<int>("Status");
 
-                    b.Property<decimal>("Valor");
+                    b.Property<double>("Totalpago");
+
+                    b.Property<double>("Valor");
 
                     b.Property<DateTime>("Vencimento");
 

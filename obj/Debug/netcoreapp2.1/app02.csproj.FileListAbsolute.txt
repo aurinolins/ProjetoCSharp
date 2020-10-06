@@ -42,6 +42,7 @@ C:\projetos\project02\app02\app02\bin\Debug\netcoreapp2.1\app02.dll
 C:\projetos\project02\app02\app02\bin\Debug\netcoreapp2.1\app02.pdb
 C:\projetos\project02\app02\app02\bin\Debug\netcoreapp2.1\app02.Views.dll
 C:\projetos\project02\app02\app02\bin\Debug\netcoreapp2.1\app02.Views.pdb
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.csprojAssemblyReference.cache
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.csproj.CoreCompileInputs.cache
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.RazorAssemblyInfo.cache
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.RazorAssemblyInfo.cs
@@ -55,6 +56,7 @@ C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\C
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Delete.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Details.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Edit.g.cshtml.cs
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Index.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
@@ -63,6 +65,12 @@ C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Err
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_Layout.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_ValidationScriptsPartial.g.cshtml.cs
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Titulos\Create.g.cshtml.cs
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Titulos\Delete.g.cshtml.cs
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Titulos\Details.g.cshtml.cs
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Titulos\Edit.g.cshtml.cs
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Titulos\FindbyDate.g.cshtml.cs
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Titulos\Index.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.RazorTargetAssemblyInfo.cache
@@ -71,10 +79,3 @@ C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.Views.pdb
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.dll
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.pdb
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.csproj.CopyComplete
-C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Titulos\Create.g.cshtml.cs
-C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Titulos\Delete.g.cshtml.cs
-C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Titulos\Details.g.cshtml.cs
-C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Titulos\Edit.g.cshtml.cs
-C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Titulos\Index.g.cshtml.cs
-C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\Index.g.cshtml.cs
-C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.csprojAssemblyReference.cache

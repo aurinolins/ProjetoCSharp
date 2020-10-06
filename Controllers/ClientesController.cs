@@ -19,8 +19,8 @@ namespace app02.Controllers
 
         // GET: Clientes
         public async Task<IActionResult> Index()
-        {
-            return View(await _context.Cliente.ToListAsync());
+        { 
+           return View(await _context.Cliente.ToListAsync());
         }
 
         // GET: Clientes/Details/5
@@ -52,22 +52,18 @@ namespace app02.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-/*      public async Task<IActionResult> Create([Bind("Id")] int id, [Bind("Nome")] string nome, [Bind("email")] string email) */
-        public async Task<IActionResult> Create([Bind("Id,Nome,email")] Cliente cliente)
+        /*      public async Task<IActionResult> Create([Bind("Id")] int id, [Bind("Nome")] string nome, [Bind("Email")] string Email) */
+        public async Task<IActionResult> Create(Cliente cliente)                                                 
         {
 
-            if ( ! ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
                 return View(cliente);
             }
-
             try
             {
                 _context.Add(cliente);
                 await _context.SaveChangesAsync();
-                ViewData["Nome"] = " ";
-                ViewData["email"] = " ";
-                ViewData["mensagem"] = "Clinte Incluido com Sucesso !!!";
                 return View();
             }
             catch (DbUpdateConcurrencyException e)
@@ -98,8 +94,8 @@ namespace app02.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit([Bind("Id")] int id, [Bind("Nome")] string nome, [Bind("email")] string email,
-                                              Cliente cliente)
+        public async Task<IActionResult> Edit([Bind("Id")] int id, [Bind("Nome")] string nome, [Bind("Email")] string Email,
+                                          [Bind("Telefone")] int telefone, Cliente cliente)
         {
 
             if (id != cliente.Id)
@@ -160,7 +156,6 @@ namespace app02.Controllers
             await _context.SaveChangesAsync();
             return RedirectToAction(nameof(Index));
         }
-
         private bool ClienteExists(int id)
         {
             return _context.Cliente.Any(e => e.Id == id);

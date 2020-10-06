@@ -8,18 +8,21 @@ namespace app02.Models.Entidades
         public int Id { get; set; }
         public string Nome { get; set; }
         [DataType(DataType.EmailAddress)]
-        public string email { get; set; }
+        public string Email { get; set; }
+        [DataType(DataType.PhoneNumber)]
+        public int Telefone { get; set; }
         public ICollection<Titulo> Titulos {get; set; }
 
         public Cliente()
         {
         }
 
-        public Cliente(int id, string nome, string email)
+        public Cliente(int id, string nome, string Email, int telefone)
         {
             this.Id = id;
             this.Nome = nome;
-            this.email = email;
+            this.Email = Email;
+            this.Telefone = telefone;
         }
     }
 

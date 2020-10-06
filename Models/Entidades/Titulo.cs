@@ -6,29 +6,36 @@ namespace app02.Models.Entidades
     {
         [Key]
         public int Id { get; set; }
-        public int Numero { get; set; }
-        public decimal Valor { get; set; }
+        public int Documento { get; set; }
+        public Cliente Cliente { get; set; }
+        public int ClienteId { get; set; }
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime Emissao { get; set; }
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime Vencimento { get; set; }
-        public Cliente Cliente { get; set; }
-        public int ClienteId { get; set; }
-        public int Status { get; set; }
+        [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
+        public DateTime Pagamento { get; set; }
+        public double Valor { get; set; }
+        public double Multa { get; set; }
+        public double Juros { get; set; }
+        public double Totalpago { get; set; }
+        public int Status   { get; set; }
 
 
         public Titulo()
         {
         }
 
-        public Titulo(int id, int numero, decimal valor, DateTime vencimento, Cliente cliente)
+        public Titulo(int id, int documento, Cliente cliente, DateTime Emissao, DateTime vencimento, double valor)
         {
             this.Id = id;
             this.Cliente = cliente;
-            this.Numero = numero;
+            this.Documento = documento;
             this.Valor = valor;
-            this.Emissao = DateTime.Today;
             this.Vencimento = vencimento;
+            this.Multa = 0;
+            this.Juros = 0;
+            this.Totalpago = 0;
             this.Status = 1;
         }
     }

@@ -1,27 +1,30 @@
 ﻿@model IEnumerable<app02.Models.Entidades.Titulo>
-
 @{
+	ViewData["Title"] = "BuscabyDate";
 	ViewData["dataini"] = DateTime.Now;
 	ViewData["datafim"] = DateTime.Now;
 }
 
+<h2>BuscabyDate</h2>
 
-<h2>Index</h2>
-
-<p>
-	<a asp-action="Create">Create New</a>
-</p>
-
-<form class="navbar-form navbar-left"  asp-action="FindbyDate">
-	<div class="form-group">
-			<label for="dataini">Data Inicial</label>
-			<input type="date" class="form-control" name="dataini" value=@ViewData["dataini"] />
-		    <label for="datafim">Data Final</label>
-			<input type="date" class="form-control" name="datafim" value=@ViewData["datafim"] />
-			<button type="submit" class="btn btn-primary">Filtro por Vencimento</button>
+<nav class="navbar navbar-inversa">
+	<div class="container.fluid">
+		<form class="navbar-form navbar-left" role="search">
+			<div class="form-group">
+				<div class="form-group">
+					<label for="dataini">Data Inicial</label>
+					<input type="date" class="form-control" name="dataini" value=@ViewData["dataini"] />
+				</div>
+				<div class="form-group">
+					<label for="datafim">Data Final</label>
+					<input type="date" class="form-control" name="datafim" value=@ViewData["datafim"] />
+				</div>
+				<button type="submit" class="btn btn-primary">Filtro</button>
+			</div>
+		</form>
 	</div>
-</form>
-	
+</nav>
+
 <table class="table">
 	<thead>
 		<tr>
@@ -68,12 +71,10 @@
 				<td>
 					@Html.DisplayFor(modelItem => item.Status)
 				</td>
-				<td>
-					<a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-					<a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-					<a asp-action="Delete" asp-route-id="@item.Id">Delete</a>
-				</td>
 			</tr>
 		}
 	</tbody>
+	<tr>
+		<a asp-action="Index">Back to List</a> |
+	</tr>
 </table>
