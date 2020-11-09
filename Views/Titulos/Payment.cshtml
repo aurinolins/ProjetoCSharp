@@ -1,0 +1,51 @@
+﻿@model app02.Models.Entidades.Titulo
+
+@{
+	ViewData["Title"] = "Pagamento";
+}
+
+<h2>Pagamento</h2>
+
+<h4>Titulo</h4>
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form asp-action="Payment" method="post">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<input type="hidden" asp-for="Id" />
+			<input type="hidden" asp-for="Documento" />
+			<input type="hidden" asp-for="ClienteId" />
+			<input type="hidden" asp-for="Emissao" />
+			<input type="hidden" asp-for="Vencimento" />
+			<input type="hidden" asp-for="Valor" />
+			<dt>
+				@Html.DisplayNameFor(model => model.Cliente)
+			</dt>
+			<dd>
+				@Html.DisplayFor(model => model.Cliente.Nome)
+			</dd>
+			<dt>
+			<dt>
+				@Html.DisplayNameFor(model => model.Documento)
+			</dt>
+			<dd>
+				@Html.DisplayFor(model => model.Documento)
+			</dd>
+			<div class="form-group">
+				<label asp-for="Pagamento" class="control-label"></label>
+				<input asp-for="Pagamento" class="form-control" />
+				<span asp-validation-for="Pagamento" class="text-success"></span>
+			</div>
+			<div class="form-group">
+				<input type="submit" value="Save" class="btn btn-default" />
+			</div>
+		</form>
+	</div>
+</div>
+<div>
+	<a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+	@{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

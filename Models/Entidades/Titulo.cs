@@ -26,9 +26,8 @@ namespace app02.Models.Entidades
         {
         }
 
-        public Titulo(int id, int documento, Cliente cliente, DateTime Emissao, DateTime vencimento, double valor)
+        public Titulo(int documento, Cliente cliente,DateTime Emissao, DateTime vencimento, double valor)
         {
-            this.Id = id;
             this.Cliente = cliente;
             this.Documento = documento;
             this.Valor = valor;

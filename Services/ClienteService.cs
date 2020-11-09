@@ -4,9 +4,10 @@ using app02.Data;
 using System.Threading.Tasks;
 using app02.Models.Entidades;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Mvc.Rendering;
 
 namespace app02.Services
-    {
+{
     public class ClienteService
     {
         private readonly app02Context _Context;
@@ -62,11 +63,73 @@ namespace app02.Services
             }
 
         }
+        public async Task AddTitulosAsync(int id, Titulo titulo)
+        {
+            var objeto = await _Context.Cliente.FirstOrDefaultAsync(obj => obj.Id == id);
+
+            if (objeto == null || objeto.Id != id)
+            {
+                throw new Exception("Cliente Não Encontrado");
+            }
+
+            objeto.Titulos.Add(titulo);
+
+            try
+            {
+                _Context.Cliente.Update(objeto);
+            }
+            catch (DbUpdateConcurrencyException e)
+            {
+                throw new Exception(e.Message);
+            }
+        }
+
+        public async Task RemTitulosAsync(int id, Titulo titulo)
+        {
+            var objeto = await _Context.Cliente.FirstOrDefaultAsync(obj => obj.Id == id);
+
+            if (objeto == null || objeto.Id != id)
+            {
+                throw new Exception("Cliente Não Encontrado");
+            }
+
+            objeto.Titulos.Remove(titulo);
+
+            try
+            {
+                _Context.Cliente.Update(objeto);
+            }
+            catch (DbUpdateConcurrencyException e)
+            {
+                throw new Exception(e.Message);
+            }
+
+        }
+        public async Task AtualizarClienteAsync(int id)
+        {
+            var obj = await _Context.Cliente.FirstOrDefaultAsync(x => x.Id == id);
+
+            if (obj == null || obj.Id != id)
+            {
+                throw new Exception("Cliente Não Encontrado"); 
+            }
+
+            try
+            {
+                _Context.Cliente.Update(obj);
+                await _Context.SaveChangesAsync();
+            }
+            catch (DbUpdateConcurrencyException e)
+            {
+                throw new Exception(e.Message);
+            }
+
+        }
     }
 }
 
 
 
 
-    
+
 

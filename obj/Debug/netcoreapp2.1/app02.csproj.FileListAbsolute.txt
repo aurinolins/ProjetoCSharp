@@ -42,7 +42,6 @@ C:\projetos\project02\app02\app02\bin\Debug\netcoreapp2.1\app02.dll
 C:\projetos\project02\app02\app02\bin\Debug\netcoreapp2.1\app02.pdb
 C:\projetos\project02\app02\app02\bin\Debug\netcoreapp2.1\app02.Views.dll
 C:\projetos\project02\app02\app02\bin\Debug\netcoreapp2.1\app02.Views.pdb
-C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.csprojAssemblyReference.cache
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.csproj.CoreCompileInputs.cache
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.RazorAssemblyInfo.cache
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.RazorAssemblyInfo.cs
@@ -79,3 +78,4 @@ C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.Views.pdb
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.dll
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.pdb
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.csproj.CopyComplete
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Titulos\Payment.g.cshtml.cs

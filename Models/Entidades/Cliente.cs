@@ -11,7 +11,7 @@ namespace app02.Models.Entidades
         public string Email { get; set; }
         [DataType(DataType.PhoneNumber)]
         public int Telefone { get; set; }
-        public ICollection<Titulo> Titulos {get; set; }
+        public ICollection<Titulo> Titulos { get; set; } = new List<Titulo>();
 
         public Cliente()
         {

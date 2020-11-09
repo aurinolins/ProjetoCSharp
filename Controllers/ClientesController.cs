@@ -100,10 +100,10 @@ namespace app02.Controllers
 
             if (id != cliente.Id)
             {
-                return NotFound();
+                return NotFound("Cliente Não Encontrado");
             }
 
-            if (!ModelState.IsValid)
+            if ( ! ModelState.IsValid)
             {
                 return NotFound();
             }
@@ -115,7 +115,7 @@ namespace app02.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!ClienteExists(cliente.Id))
+                if ( ! ClienteExists(cliente.Id))
                 {
                     return NotFound();
                 }
