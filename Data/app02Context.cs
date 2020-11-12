@@ -13,5 +13,7 @@ namespace app02.Data
         public DbSet<Cliente> Cliente { get; set; }
 
         public DbSet<Titulo> Titulos { get; set; }
+
+        public DbSet<Indices> Indices { get; set; }
     }
 }

@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using app02.Data;
 
 namespace app02.Migrations
 {
     [DbContext(typeof(app02Context))]
-    partial class app02ContextModelSnapshot : ModelSnapshot
+    [Migration("20201111005303_10novembro.3")]
+    partial class _10novembro3
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -38,9 +40,9 @@ namespace app02.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<double>("Juros");
+                    b.Property<int>("Juros");
 
-                    b.Property<double>("Multa");
+                    b.Property<int>("Multa");
 
                     b.Property<DateTime>("Periodo");
 

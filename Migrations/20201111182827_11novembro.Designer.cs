@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using app02.Data;
 
 namespace app02.Migrations
 {
     [DbContext(typeof(app02Context))]
-    partial class app02ContextModelSnapshot : ModelSnapshot
+    [Migration("20201111182827_11novembro")]
+    partial class _11novembro
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

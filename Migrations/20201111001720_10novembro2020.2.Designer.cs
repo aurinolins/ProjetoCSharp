@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using app02.Data;
 
 namespace app02.Migrations
 {
     [DbContext(typeof(app02Context))]
-    partial class app02ContextModelSnapshot : ModelSnapshot
+    [Migration("20201111001720_10novembro2020.2")]
+    partial class _10novembro20202
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -35,16 +37,14 @@ namespace app02.Migrations
 
             modelBuilder.Entity("app02.Models.Entidades.Indices", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<int>("Periodo")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<double>("Juros");
+                    b.Property<int>("Juros");
 
-                    b.Property<double>("Multa");
+                    b.Property<int>("Multa");
 
-                    b.Property<DateTime>("Periodo");
-
-                    b.HasKey("Id");
+                    b.HasKey("Periodo");
 
                     b.ToTable("Indices");
                 });

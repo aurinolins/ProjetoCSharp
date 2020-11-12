@@ -45,6 +45,7 @@ C:\projetos\project02\app02\app02\bin\Debug\netcoreapp2.1\app02.Views.pdb
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.csproj.CoreCompileInputs.cache
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.RazorAssemblyInfo.cache
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.RazorAssemblyInfo.cs
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.AssemblyInfoInputs.cache
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.AssemblyInfo.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.TagHelpers.input.cache
@@ -59,6 +60,7 @@ C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Clientes\I
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Home\About.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Home\Contact.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Home\Index.g.cshtml.cs
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Home\Indexanterior.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Home\Privacy.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Shared\Error.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Shared\_CookieConsentPartial.g.cshtml.cs
@@ -70,6 +72,7 @@ C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Titulos\De
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Titulos\Edit.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Titulos\FindbyDate.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Titulos\Index.g.cshtml.cs
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Titulos\Payment.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\_ViewImports.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\_ViewStart.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.RazorTargetAssemblyInfo.cache
@@ -78,4 +81,8 @@ C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.Views.pdb
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.dll
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.pdb
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.csproj.CopyComplete
-C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Titulos\Payment.g.cshtml.cs
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Indices\Create.g.cshtml.cs
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Indices\Delete.g.cshtml.cs
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Indices\Details.g.cshtml.cs
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Indices\Edit.g.cshtml.cs
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Indices\Index.g.cshtml.cs

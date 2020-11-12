@@ -1,0 +1,37 @@
+﻿@model app02.Models.Entidades.Indices
+
+@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Indices</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Periodo)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Periodo)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Juros)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Juros)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.Multa)
+        </dt>
+        <dd>
+            @Html.DisplayFor(model => model.Multa)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.Id">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

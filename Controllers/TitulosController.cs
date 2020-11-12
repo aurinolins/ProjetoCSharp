@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -6,6 +7,7 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using app02.Data;
 using app02.Models.Entidades;
+using app02.Models.Enum;
 using app02.Services;
 
 namespace app02.Controllers
@@ -14,7 +16,7 @@ namespace app02.Controllers
     {
         private readonly app02Context _context;
         private readonly ClienteService _clienteService;
-
+       
         public TitulosController(app02Context context, ClienteService clienteService)
         {
             _context = context;
@@ -26,7 +28,6 @@ namespace app02.Controllers
 
         {
             var app02Context = _context.Titulos.Include(t => t.Cliente);
-
             return View(await app02Context.ToListAsync());
         }
 
@@ -233,7 +234,7 @@ namespace app02.Controllers
 
             try
             {
-                var tituloatualizado =  CalculaPagamento(titulo);
+                var tituloatualizado = await CalculaPagamento(titulo);
                 _context.Titulos.Update(tituloatualizado);
                 await _context.SaveChangesAsync();
             }
@@ -250,13 +251,15 @@ namespace app02.Controllers
             }
             return RedirectToAction(nameof(Index));
         }
-        public Titulo CalculaPagamento(Titulo titulo)
+        public async Task<Titulo> CalculaPagamento(Titulo titulo)
         {
+            var indices = await _context.Indices.LastAsync();
+
             if (titulo.Pagamento > titulo.Vencimento)
             {
                 var atraso = titulo.Pagamento.Subtract(titulo.Vencimento).TotalDays;
-                titulo.Juros = titulo.Valor * 0.01 / 30 * atraso;
-                titulo.Multa = titulo.Valor * 0.02;
+                titulo.Juros = titulo.Valor * (indices.Juros / 100 / 30) * atraso;
+                titulo.Multa = titulo.Valor * (indices.Multa / 100);
             }
             titulo.Totalpago = titulo.Valor + titulo.Juros + titulo.Multa;
             titulo.Status = 2;

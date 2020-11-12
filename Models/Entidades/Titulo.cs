@@ -15,9 +15,13 @@ namespace app02.Models.Entidades
         public DateTime Vencimento { get; set; }
         [DisplayFormat(DataFormatString = "{0:dd/MM/yyyy}")]
         public DateTime Pagamento { get; set; }
+        [DisplayFormat(DataFormatString = "{0:F2}")]
         public double Valor { get; set; }
+        [DisplayFormat(DataFormatString = "{0:F2}")]
         public double Multa { get; set; }
+        [DisplayFormat(DataFormatString = "{0:F2}")]
         public double Juros { get; set; }
+        [DisplayFormat(DataFormatString = "{0:F2}")]
         public double Totalpago { get; set; }
         public int Status   { get; set; }
 
@@ -31,7 +35,9 @@ namespace app02.Models.Entidades
             this.Cliente = cliente;
             this.Documento = documento;
             this.Valor = valor;
+            this.Emissao = Emissao;
             this.Vencimento = vencimento;
+            this.Pagamento = DateTime.Parse("00/00/0000");
             this.Multa = 0;
             this.Juros = 0;
             this.Totalpago = 0;
