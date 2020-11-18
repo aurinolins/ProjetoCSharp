@@ -81,6 +81,30 @@ namespace app02.Migrations
                     b.ToTable("Titulos");
                 });
 
+            modelBuilder.Entity("app02.Models.Usuario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Email")
+                        .IsRequired();
+
+                    b.Property<int>("Fone");
+
+                    b.Property<string>("Nome")
+                        .IsRequired();
+
+                    b.Property<string>("Password")
+                        .IsRequired();
+
+                    b.Property<string>("Sobrenome")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Usuario");
+                });
+
             modelBuilder.Entity("app02.Models.Entidades.Titulo", b =>
                 {
                     b.HasOne("app02.Models.Entidades.Cliente", "Cliente")

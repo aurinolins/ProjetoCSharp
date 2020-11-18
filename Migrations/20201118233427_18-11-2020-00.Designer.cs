@@ -9,8 +9,8 @@ using app02.Data;
 namespace app02.Migrations
 {
     [DbContext(typeof(app02Context))]
-    [Migration("20201111005303_10novembro.3")]
-    partial class _10novembro3
+    [Migration("20201118233427_18-11-2020-00")]
+    partial class _1811202000
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -40,9 +40,9 @@ namespace app02.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<int>("Juros");
+                    b.Property<double>("Juros");
 
-                    b.Property<int>("Multa");
+                    b.Property<double>("Multa");
 
                     b.Property<DateTime>("Periodo");
 
@@ -81,6 +81,30 @@ namespace app02.Migrations
                     b.HasIndex("ClienteId");
 
                     b.ToTable("Titulos");
+                });
+
+            modelBuilder.Entity("app02.Models.Usuario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Email")
+                        .IsRequired();
+
+                    b.Property<int>("Fone");
+
+                    b.Property<string>("Nome")
+                        .IsRequired();
+
+                    b.Property<string>("Password")
+                        .IsRequired();
+
+                    b.Property<string>("Sobrenome")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Usuario");
                 });
 
             modelBuilder.Entity("app02.Models.Entidades.Titulo", b =>

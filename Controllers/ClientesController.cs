@@ -2,6 +2,7 @@
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
+using System.ComponentModel.DataAnnotations;
 using app02.Data;
 using app02.Models.Entidades;
 using System;
@@ -10,7 +11,7 @@ namespace app02.Controllers
 {
     public class ClientesController : Controller
     {
-        private readonly app02Context _context;
+       private readonly app02Context _context;
 
         public ClientesController(app02Context context)
         {
@@ -53,6 +54,7 @@ namespace app02.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         /*      public async Task<IActionResult> Create([Bind("Id")] int id, [Bind("Nome")] string nome, [Bind("Email")] string Email) */
+
         public async Task<IActionResult> Create(Cliente cliente)                                                 
         {
 

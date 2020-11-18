@@ -40,6 +40,7 @@ namespace app02
             builder => builder.MigrationsAssembly("app02")));
 
             services.AddScoped<ClienteService>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

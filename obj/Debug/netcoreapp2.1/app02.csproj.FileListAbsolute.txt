@@ -86,3 +86,8 @@ C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Indices\De
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Indices\Details.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Indices\Edit.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Indices\Index.g.cshtml.cs
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Usuarios\Create.g.cshtml.cs
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Usuarios\Delete.g.cshtml.cs
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Usuarios\Details.g.cshtml.cs
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Usuarios\Edit.g.cshtml.cs
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Usuarios\Index.g.cshtml.cs
