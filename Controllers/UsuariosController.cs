@@ -54,15 +54,25 @@ namespace app02.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Nome,Sobrenome,Email,Fone,Password")] Usuario usuario)
+        public async Task<IActionResult> Create([Bind("Id,Nome,Sobrenome,Email,Fone,Password,Passwordconfirme")] Usuario usuario)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-                _context.Add(usuario);
-                await _context.SaveChangesAsync();
-                return RedirectToAction(nameof(Index));
+                return NotFound("Model State Invalido ");
             }
-            return View(usuario);
+
+            bool passwordisvalid = usuario.Validapassword(usuario.Passwordconfirme, usuario.Password);
+
+            if (!passwordisvalid)
+            {
+                return NotFound("Password Invalida");
+            }
+
+
+            _context.Add(usuario);
+            await _context.SaveChangesAsync();
+            return RedirectToAction(nameof(Index));
+
         }
 
         // GET: Usuarios/Edit/5
@@ -116,6 +126,43 @@ namespace app02.Controllers
             return View(usuario);
         }
 
+        // GET: Usuarios/Login
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        // POST: Usuarios/Login
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> Login(int id, [Bind("Email")] string email, [Bind("Password")]  string password)
+        {
+            if ( ! ModelState.IsValid)
+            {
+                return NotFound("Model State Invalido");
+            }
+
+            var usuario = await _context.Usuario.FirstOrDefaultAsync(x => x.Email == email);
+
+            if (usuario == null)
+            {
+                return NotFound("Usuário Inválido");
+            }
+
+            if (email != usuario.Email)
+            {
+                return NotFound("Usuário não Encontrado");
+            }
+            if (password != usuario.Password)
+            {
+                return NotFound("Senha Inválida");
+            }
+            return RedirectToAction(nameof(Index));
+        }
+
+
         // GET: Usuarios/Delete/5
         public async Task<IActionResult> Delete(int? id)
         {
@@ -131,7 +178,7 @@ namespace app02.Controllers
                 return NotFound();
             }
 
-            return View(usuario);
+            return RedirectToAction(nameof(Index));
         }
 
         // POST: Usuarios/Delete/5
