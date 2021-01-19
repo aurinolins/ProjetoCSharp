@@ -16,7 +16,7 @@ namespace app02.Controllers
     {
         private readonly app02Context _context;
         private readonly ClienteService _clienteService;
-       
+
         public TitulosController(app02Context context, ClienteService clienteService)
         {
             _context = context;
@@ -168,12 +168,12 @@ namespace app02.Controllers
         public async Task<IActionResult> FindbyDate(DateTime? dataini, DateTime? datafim, Cliente cliente)
 
         {
-            if (!dataini.HasValue)
+            if ( ! dataini.HasValue)
             {
                 dataini = new DateTime(DateTime.Now.Year, 01, 01);
             }
 
-            if (!datafim.HasValue)
+            if ( ! datafim.HasValue)
             {
                 datafim = new DateTime(DateTime.Now.Year, 12, 31);
             }
@@ -253,17 +253,23 @@ namespace app02.Controllers
         }
         public async Task<Titulo> CalculaPagamento(Titulo titulo)
         {
-            var indices = await _context.Indices.LastAsync();
-
-            if (titulo.Pagamento > titulo.Vencimento)
+            try
             {
-                var atraso = titulo.Pagamento.Subtract(titulo.Vencimento).TotalDays;
-                titulo.Juros = titulo.Valor * (indices.Juros / 100 / 30) * atraso;
-                titulo.Multa = titulo.Valor * (indices.Multa / 100);
+                var indices = await _context.Indices.LastAsync();
+                if (titulo.Pagamento > titulo.Vencimento)
+                {
+                    var atraso = titulo.Pagamento.Subtract(titulo.Vencimento).TotalDays;
+                    titulo.Juros = titulo.Valor * (indices.Juros / 100 / 30) * atraso;
+                    titulo.Multa = titulo.Valor * (indices.Multa / 100);
+                }
+                titulo.Totalpago = titulo.Valor + titulo.Juros + titulo.Multa;
+                titulo.Status = 2;
+                return titulo;
             }
-            titulo.Totalpago = titulo.Valor + titulo.Juros + titulo.Multa;
-            titulo.Status = 2;
-            return titulo;
+            catch
+            {
+                return titulo;
+            }
         }
     }
 }

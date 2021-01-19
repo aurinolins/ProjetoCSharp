@@ -70,6 +70,7 @@ namespace app02
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseAuthentication();
+         
 
             app.UseMvc(routes =>
             {

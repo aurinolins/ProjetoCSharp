@@ -41,7 +41,6 @@ namespace app02.Controllers
 
             return View(cliente);
         }
-
         // GET: Clientes/Create
         public IActionResult Create()
         {

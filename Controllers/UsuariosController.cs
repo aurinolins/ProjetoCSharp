@@ -61,9 +61,22 @@ namespace app02.Controllers
                 return NotFound("Model State Invalido ");
             }
 
+            if (usuario == null)
+            {
+                return NotFound("Usuário Inválido");
+            }
+
+            bool  usuarioexiste = await _context.Usuario.AnyAsync(x => x.Email == usuario.Email);
+
+            if ( usuarioexiste)
+            {
+                return NotFound("Este email já está cadastrado para outro Usuário");
+            }
+
+
             bool passwordisvalid = usuario.Validapassword(usuario.Passwordconfirme, usuario.Password);
 
-            if (!passwordisvalid)
+            if ( ! passwordisvalid)
             {
                 return NotFound("Password Invalida");
             }
@@ -112,7 +125,7 @@ namespace app02.Controllers
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!UsuarioExists(usuario.Id))
+                    if ( ! await  UsuarioExists(usuario.Id))
                     {
                         return NotFound();
                     }
@@ -192,9 +205,9 @@ namespace app02.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        private bool UsuarioExists(int id)
+        private async Task<bool> UsuarioExists(int id)
         {
-            return _context.Usuario.Any(e => e.Id == id);
+            return  await _context.Usuario.AnyAsync(e => e.Id == id);
         }
     }
 }
