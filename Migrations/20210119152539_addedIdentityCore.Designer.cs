@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using app02.Data;
 
 namespace app02.Migrations
 {
     [DbContext(typeof(app02Context))]
-    partial class app02ContextModelSnapshot : ModelSnapshot
+    [Migration("20210119152539_addedIdentityCore")]
+    partial class addedIdentityCore
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -49,25 +51,6 @@ namespace app02.Migrations
                     b.ToTable("Indices");
                 });
 
-            modelBuilder.Entity("app02.Models.Entidades.SignUpUser", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Email")
-                        .IsRequired();
-
-                    b.Property<string>("Password")
-                        .IsRequired();
-
-                    b.Property<string>("PasswordConfirm")
-                        .IsRequired();
-
-                    b.HasKey("Id");
-
-                    b.ToTable("SignUpUsers");
-                });
-
             modelBuilder.Entity("app02.Models.Entidades.Titulo", b =>
                 {
                     b.Property<int>("Id")
@@ -98,6 +81,32 @@ namespace app02.Migrations
                     b.HasIndex("ClienteId");
 
                     b.ToTable("Titulos");
+                });
+
+            modelBuilder.Entity("app02.Models.Usuario", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Email")
+                        .IsRequired();
+
+                    b.Property<int>("Fone");
+
+                    b.Property<string>("Nome")
+                        .IsRequired();
+
+                    b.Property<string>("Password")
+                        .IsRequired();
+
+                    b.Property<string>("Passwordconfirme");
+
+                    b.Property<string>("Sobrenome")
+                        .IsRequired();
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Usuario");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>

@@ -5,10 +5,12 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using app02.Data;
 using app02.Services;
+using app02.Repository;
 using Microsoft.EntityFrameworkCore;
 
 namespace app02
@@ -39,7 +41,11 @@ namespace app02
             options.UseMySql(Configuration.GetConnectionString("app02Context"),
             builder => builder.MigrationsAssembly("app02")));
 
+            services.AddIdentity<IdentityUser, IdentityRole>().
+            AddEntityFrameworkStores<app02Context>();
+
             services.AddScoped<ClienteService>();
+            services.AddScoped<IAccountRepository, IAccountRepository>();
 
         }
 
@@ -53,6 +59,7 @@ namespace app02
                 SupportedCultures = new List<CultureInfo> { enUS },
                 SupportedUICultures = new List<CultureInfo> { enUS }
             };
+
 
             app.UseRequestLocalization(localizationoptions);
 
@@ -70,8 +77,7 @@ namespace app02
             app.UseStaticFiles();
             app.UseCookiePolicy();
             app.UseAuthentication();
-         
-
+                     
             app.UseMvc(routes =>
             {
                 routes.MapRoute(
