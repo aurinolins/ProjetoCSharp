@@ -7,11 +7,11 @@ namespace app02.Controllers
 {
     public class AccountController : Controller
     {
-        private readonly IAccountRepository _usermaneger;
+        private readonly IAccountRepository _usermanager;
 
-        public AccountController(IAccountRepository usermaneger)
+        public AccountController(IAccountRepository usermanager)
         {
-            _usermaneger = usermaneger;
+            _usermanager = usermanager;
         }
 
         [Route("Signup")]
@@ -21,12 +21,11 @@ namespace app02.Controllers
         }
         [Route("Signup")]
         [HttpPost]
-        [ValidateAntiForgeryToken]
         public async Task<IActionResult> Signup(SignUpUser usermodel)
         {
             if (ModelState.IsValid)
             {
-                var result = await _usermaneger.CreateUser(usermodel);
+                var result = await _usermanager.CreateUser(usermodel);
                 if (!result.Succeeded)
                 {
                     foreach (var errorMessage in result.Errors)

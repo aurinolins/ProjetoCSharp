@@ -45,7 +45,7 @@ namespace app02
             AddEntityFrameworkStores<app02Context>();
 
             services.AddScoped<ClienteService>();
-            services.AddScoped<IAccountRepository, IAccountRepository>();
+            services.AddScoped<IAccountRepository, AccountRepository>();
 
         }
 
@@ -76,7 +76,7 @@ namespace app02
             app.UseHttpsRedirection();
             app.UseStaticFiles();
             app.UseCookiePolicy();
-            app.UseAuthentication();
+           
                      
             app.UseMvc(routes =>
             {

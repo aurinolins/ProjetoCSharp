@@ -87,3 +87,4 @@ C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Indices\De
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Indices\Edit.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Indices\Index.g.cshtml.cs
 C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\Razor\Views\Account\Signup.g.cshtml.cs
+C:\projetos\project02\app02\app02\obj\Debug\netcoreapp2.1\app02.csprojAssemblyReference.cache

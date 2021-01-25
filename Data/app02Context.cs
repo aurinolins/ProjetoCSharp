@@ -19,8 +19,7 @@ namespace app02.Data
         public DbSet<Indices> Indices { get; set; }
 
         public DbSet<SignUpUser> SignUpUsers { get; set; }
-        public DbSet<AccountRepository> AccoutRepository { get; set; }
-        public DbSet<IAccountRepository> IAccoutRepository { get; set; }
+              
     }
 }
 

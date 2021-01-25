@@ -66,7 +66,7 @@ using app02.Models;
             WriteLiteral("\r\n<h2>BuscabyDate</h2>\r\n\r\n<nav class=\"navbar navbar-inversa\">\r\n\t<div class=\"container.fluid\">\r\n\t\t");
             EndContext();
             BeginContext(268, 530, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "76f790600b424884a4e5fd816f11788f", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("form", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "667cadc741514a47bc262e865c3421b7", async() => {
                 BeginContext(320, 168, true);
                 WriteLiteral("\r\n\t\t\t<div class=\"form-group\">\r\n\t\t\t\t<div class=\"form-group\">\r\n\t\t\t\t\t<label for=\"dataini\">Data Inicial</label>\r\n\t\t\t\t\t<input type=\"date\" class=\"form-control\" name=\"dataini\"");
                 EndContext();
@@ -247,7 +247,7 @@ WriteAttributeValue("", 674, ViewData["datafim"], 674, 20, false);
             WriteLiteral("\t</tbody>\r\n\t<tr>\r\n\t\t");
             EndContext();
             BeginContext(1834, 38, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "e1c34f7180e146f49c92846f80afe989", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("a", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.StartTagAndEndTag, "cea5162da4f84243bf4be6de4dfbc946", async() => {
                 BeginContext(1856, 12, true);
                 WriteLiteral("Back to List");
                 EndContext();
